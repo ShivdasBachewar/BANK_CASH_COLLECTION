@@ -1,0 +1,38 @@
+<h5>	
+		<div class="well" style="width:40%; height: 40%; margin-left: 4%; float: left; background-color: lightblue;">
+			<h3 style="text-align: center; color:blue;"> Use Following Detail To Search Agent </h3><br>
+			<input type="checkbox" onclick="addName()" style='margin-left: 15%'> Use Name <br>
+			<input type="checkbox" onclick="addAddress()" style='margin-left: 15%'> Use Address <br>
+			<input type="checkbox" onclick="addMobileNumber()" style='margin-left: 15%'> Use Mobile Number <br>
+			<input type="checkbox" onclick="addEmail()" style='margin-left: 15%'> Use Email <br>
+			<input type="checkbox" onclick="addCollectionDetail()" style='margin-left: 15%'> Use Collection (minimum or maximum)<br>
+			<input type="checkbox" onclick="addStatus()" style='margin-left: 15%'> Use Status <br>
+		</div>
+		
+		<div class="well" style="width:50%; height:40%; overflow:auto; margin-right: 4%; float: right; background-color: lightblue;">
+			<h3 style="text-align: center; color:blue;"> Search Agent </h3><br>
+			
+			<table class="w3-table">
+			<tr id='aid' style="text-align : center">
+				<td>Agent Id :</td>
+				<td><input type="text" name="agentId" id="agentId"></td>
+			</tr>
+			<tr id="aname" style="display: none;"><td>Name </td><td><input type='text' id='aname1'></td></tr>
+			<tr id="aaddr" style="display: none;"><td>Address </td><td><input type='text' id='aaddr1'></td></tr>
+			<tr id="amono" style="display: none;"><td>Mobile No. </td><td><input type='text' id='amono1'></td></tr>
+			<tr id="aemail" style="display: none;"><td>Email </td><td><input type='email' autocomplete='yes' id='aemail1'></td></tr>
+			<tr id="acollection" style="display: none;"><td>Collection </td><td> Minimum <i class='fa fa-inr'></i><input type='text' id='amin1'><br> Maximum <i class='fa fa-inr'></i><input type='text' id='amax1'></td></tr>
+			<tr id="astatus" style="display: none;"><td>Status </td><td><select  id='astatus1'><option value='1'>Active</option><option value='0'>Deactive</option></select></td></tr>
+			</table>
+			<p style="text-align : center">
+				<button class="btn btn-success" style="width:25%;" onclick="searchAgent()"> SEARCH </button><br>
+			</p>
+		</div>
+<br>
+<div class="well" style="background-color: lightgray; width: 92%; margin-top:22%; margin-left:4%; margin-right: 4%; display: none;" id="kkkk1">
+<h3 style='text-align:center;'> Search Detail </h3>
+<hr>
+<h5 id='show_Agent_Id'>
+</h5>
+</div>
+</h5>

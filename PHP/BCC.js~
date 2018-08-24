@@ -1,0 +1,148 @@
+function activate_This_User(element) {
+	id = "id"+element.value;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    	if (this.readyState== 4 && this.status == 200) {
+    		if(this.responseText==0){
+    			alert('Unable to perform Operation. Please Contact To developer.');
+    		}
+    		else{
+    			document.getElementById(element.value).innerHTML = this.responseText;
+    		}
+    	}
+    };
+    xhttp.open('POST','PHP/activate_This_User.php?id='+element.value,true);
+    xhttp.send();	
+    document.getElementById(id).innerHTML="Activated";
+    document.getElementById(id).style.color='green';
+    id = "c"+element.value;
+    document.getElementById(id).style.color='green';
+}
+
+function deactivate_This_User(element) {
+	id = "id"+element.value;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+    	if (this.readyState== 4 && this.status == 200) {
+    		if(this.responseText==0){
+    			alert('Unable to perform Operation. Please Contact To developer.');
+    		}
+    		else{
+    			document.getElementById(element.value).innerHTML = this.responseText;
+    		}
+    	}
+    };
+    xhttp.open('POST','PHP/deactivate_This_User.php?id='+element.value,true);
+    xhttp.send();	
+    document.getElementById(id).innerHTML="Deativated";
+    document.getElementById(id).style.color='red';
+    id = "c"+element.value;
+    document.getElementById(id).style.color="red";
+}
+
+var nm=0,adr=0,mn=0,em=0,cl=0,st=0,al=0,cnt=0;
+
+function make_Initialization(){
+	document.getElementById('aname').innerHTML="";
+	document.getElementById('aaddr').innerHTML="";
+	alert();
+}
+
+function makeDefault() {
+	if (cnt==0) {
+	document.getElementById('aid').style.display="table-row";	
+	}
+}
+
+function addName() {
+	document.getElementById('aid').style.display="none";
+	if(nm==0){
+		alert();
+		document.getElementById('aname').innerHTML="<td>Name </td><td><input type='text' id='aname1'></td>";
+		document.getElementById('aname').style.display="block";
+		
+		nm=1;
+		cnt++;
+	}
+	else{
+		document.getElementById('aname').style.display="none";
+		nm=0;
+		cnt--;
+		makeDefault();
+	}
+}
+
+function addAddress() {
+	document.getElementById('aid').style.display="none";
+	if(adr==0){
+		document.getElementById('aaddr').style.display="block";
+		adr=1;
+		cnt++;
+	}
+	else{
+		document.getElementById('aaddr').style.display="none";
+		adr=0;
+		cnt--;
+		makeDefault();
+	}
+}
+
+function addMobileNumber() {
+	document.getElementById('aid').style.display="none";
+	if(mn==0){
+		document.getElementById('amono').style.display="block";
+		mn=1;
+		cnt++;
+	}
+	else{
+		document.getElementById('amono').style.display="none";
+		mn=0;
+		cnt--;
+		makeDefault();
+	}
+}
+
+function addEmail() {
+	document.getElementById('aid').style.display="none";
+	if(em==0){
+		document.getElementById('aemail').style.display="block";
+		em=1;
+		cnt++;
+	}
+	else{
+		document.getElementById('aemail').style.display="none";
+		em=0;
+		cnt--;
+		makeDefault();
+	}
+}
+
+function addCollectionDetail() {
+	document.getElementById('aid').style.display="none";
+	if(cl==0){
+		document.getElementById('acollection').style.display="block";
+		cl=1;
+		cnt++;
+	}
+	else{
+		document.getElementById('acollection').style.display="none";
+		cl=0;
+		cnt--;
+		makeDefault();
+	}
+}
+
+function addStatus() {
+	document.getElementById('aid').style.display="none";
+	if(st==0){
+		document.getElementById('astatus').style.display="block";
+		st=1;
+		cnt++;
+	}
+	else{
+		document.getElementById('astatus').style.display="none";
+		st=0;
+		cnt--;
+		makeDefault();
+	}
+}
